@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E0368"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/picture_0" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/image"
+        app:dividerInsetStart="16dp"
+        app:dividerInsetEnd="16dp"/>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:background="@color/white"
+        android:layout_below="@+id/divider"
+        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:layout_width="match_parent" >
+
+        <FrameLayout
+            android:id="@+id/standard_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+            <!-- Bottom sheet contents. -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linear_1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/bottomsheet_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="HEADING"
+                        android:textSize="30sp"
+                        android:layout_margin="10dp"
+                        android:padding="5dp"
+                        android:textColor="#1E0368"/>
+
+
+                    <TextView
+                        android:id="@+id/bottomsheet_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Content"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:padding="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linear_2"
+                    android:layout_below="@+id/linear_1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/bottomsheet_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="135dp"
+                        android:layout_marginRight="85dp"
+                        android:layout_gravity="bottom"
+                        android:background="#3600D0"
+                        android:text="Get Started" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floating_action_button"
+                        app:fabSize="mini"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:contentDescription="Go to next"
+                        app:srcCompat="@drawable/navigation"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>
